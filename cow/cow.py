@@ -20,13 +20,24 @@ class CowRefactored():
     species = ""
     food = ""
     shift = ""
-    def __init__(self, name, species, shift, food):
+    def __init__(self, name, species, shift, food, chip_num):
         self.id = id
         self.name = name
         self.species = species
         self.shift = shift
         self.slither = True
-        self.food = food    
+        self.food = food
+        self.chip_number = chip_num
+        
+    @property      # the getter
+    def chip_number(self):
+        try:
+            return self.__chip_number
+        except AttributeError:
+            return 0
+    @chip_number.setter    # the setter
+    def chip_number(self, chip_num):
+        pass   # do nothing, which prevents the setting of a value
         
     def __str__(self):
         return f"{self.name} is a {self.species}"
