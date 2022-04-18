@@ -30,4 +30,16 @@ class MooseRefactored():
         
     def __str__(self):
         return f"{self.name} is a {self.species}"
-                
+
+    # refactor MOOSE as a child class by adding (Animal)
+class Moose(Animal):
+    #remove redundant properties and set values via Animal
+    def __init__(self, name, species, shift, food, chip_num):
+        super().__init__(name, species, chip_num)
+        self.shift = shift   # stays on MOOSE: not all animals have shifts
+        self.walking = True  # Stays on MOOSE: not all animals 'walk'
+        self.food = food
+        
+    def feed(self):
+        print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")} after the {self.food} was wrapped in warm, flour tortillas')
+                   
