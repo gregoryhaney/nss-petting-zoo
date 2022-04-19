@@ -1,7 +1,7 @@
 from datetime import date
 
-class Slug():
-    """this is a class for all SLUG objects"""
+class Leech():
+    """this is a class for all LEECH objects"""
     def __init__(self, name, species, food):
         self.id = id
         self.name = name
@@ -11,9 +11,9 @@ class Slug():
 
     def feed(self):
         print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
-
-class SlugRefactored():
-    """this is a class for all SLUG objects represented as STRINGS"""
+      
+class LeechRefactored():
+    """this is a class for all LEECH objects represented as STRINGS"""
     # Initialize the items
     name = ""
     species = ""
@@ -28,9 +28,10 @@ class SlugRefactored():
     def __str__(self):
         return f"{self.name} is a {self.species}"
 
-class Slug(Animal):
+# refactor LEECH as a child class by adding (Animal)
+class Leech(Animal):
     #remove redundant properties and set values via Animal
     def __init__(self, name, species, food, chip_num):
         super().__init__(name, species, food, chip_num)
-        self.slither = True  # Stays on SLUG: not all animals 'slither'
-                    
+        self.slither = True  # Stays on LEECH: not all animals 'slither'
+             

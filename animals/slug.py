@@ -1,7 +1,7 @@
 from datetime import date
 
-class Asp():
-    """this is a class for all ASP objects"""
+class Slug():
+    """this is a class for all SLUG objects"""
     def __init__(self, name, species, food):
         self.id = id
         self.name = name
@@ -12,8 +12,8 @@ class Asp():
     def feed(self):
         print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")}')
 
-class AspRefactored():
-    """this is a class for all ASP objects represented as STRINGS"""
+class SlugRefactored():
+    """this is a class for all SLUG objects represented as STRINGS"""
     # Initialize the items
     name = ""
     species = ""
@@ -28,13 +28,10 @@ class AspRefactored():
     def __str__(self):
         return f"{self.name} is a {self.species}"
 
-class Asp(Animal):
+# refactor SLUG as a child class by adding (Animal)
+class Slug(Animal):
     #remove redundant properties and set values via Animal
     def __init__(self, name, species, food, chip_num):
-        super().__init__(name, species, chip_num)
-        self.slither = True  # Stays on ASP: not all animals 'slither'
-        self.food = food
- 
-    def feed(self):
-        print(f'{self.name} was fed {self.food} on {date.today().strftime("%m/%d/%Y")} after the {self.food} was chilled and mixed with hot salsa')
-            
+        super().__init__(name, species, food, chip_num)
+        self.slither = True  # Stays on SLUG: not all animals 'slither'
+                    
